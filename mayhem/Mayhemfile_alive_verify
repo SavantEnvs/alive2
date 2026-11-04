@@ -1,0 +1,10 @@
+project: savantenvs/alive2
+target: alive_verify
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/alive_verify/testsuite
+cmds:
+  - cmd: /mayhem/alive_verify
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/alive_verify/alive_verify.dict
+    timeout: 60

@@ -1,0 +1,10 @@
+project: savantenvs/alive2
+target: alive_parse
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/alive_parse/testsuite
+cmds:
+  - cmd: /mayhem/alive_parse
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/alive_parse/alive_parse.dict
+    timeout: 60
